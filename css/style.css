@@ -10,6 +10,7 @@
     --font-spotlight-shadow-offset-neg: -0.35em;
     --font-spotlight-shadow: #00000030;
     --overlay-color: #000000A0;
+    --hero-height: 90vh;
 }
 
 * {
@@ -23,36 +24,49 @@ body, html {
     height: 100%;
 }
 
-h1 {
+body {
+
+}
+
+h1, h2, h3, h4, h5, h6 {
     font-family: Amaranth, serif;
 }
 
+h2, h3 {
+    margin: 0em 1em 0.5em 1em;
+}
+
+.about h3 {
+    margin-top: 2em;
+}
+
 div#hero {
-    height: 90vh;
+    height: var(--hero-height);
     background-color: var(--overlay-color);
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+
 }
 
 .heroBackgroundDiv {
     position: absolute;
 	z-index: -1;
     width: 100%;
-	height: 90vh;
+	height: var(--hero-height);
     overflow: hidden;
 }
 
 .heroBackground {
-    position: relative;
+    position: absolute;
     height: 130%;
 	object-fit: cover;
     top: -25%;
-    
 }
 
 .heroContent {
+/*    height: var(--hero-height);*/
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -63,6 +77,23 @@ div#hero {
 	border-radius: 8px;
 	padding: 2px;
 	box-shadow: var(--shadowBlured);
+    padding: 2%;
+}
+
+#about {
+    background: linear-gradient(blue, black);
+    display: flex;
+    align-items: center;
+    padding: 2em;
+}
+
+.about {
+
+    background-color: var(--background-secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
 }
 
 
