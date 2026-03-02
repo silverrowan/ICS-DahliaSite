@@ -1,0 +1,2 @@
+./images/Dahlia*Tea*Co/*.*
+./images/Old*Website*downloads/*.*
