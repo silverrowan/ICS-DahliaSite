@@ -1,0 +1,17 @@
+.cls-1, cls-2 {
+    stroke: white;
+    stroke-width: 30px;
+    paint-order: stroke;
+}
+
+.cls-1 {
+    fill: #9c3;
+}
+
+.cls-2 {
+    fill:#502e87;
+}
+
+/*
+<defs><style>.cls-1{fill:#9c3;}.cls-2{fill:#502e87;}</style></defs>
+*/

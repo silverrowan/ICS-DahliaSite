@@ -75,24 +75,31 @@ nav a:hover {
     font-weight: bold;
     text-transform: capitalize;
     border: 0px;
-    padding: 1em;
     border-radius: 0.5em;
     text-shadow: 
             var(--font-spotlight-shadow-offset) 0 var(--font-spotlight-shadow-offset) var(--font-spotlight-shadow), 
             var(--font-spotlight-shadow-offset-neg) 0 var(--font-spotlight-shadow-offset) var(--font-spotlight-shadow), 
             0 var(--font-spotlight-shadow-offset) var(--font-spotlight-shadow-offset) var(--font-spotlight-shadow), 
             0 var(--font-spotlight-shadow-offset-neg) var(--font-spotlight-shadow-offset) var(--font-spotlight-shadow);
+	display: inline-block;
+	font-style: normal;
+	font-size: 1.2em;
+    font-weight: bold;
+    margin: 0px;
+	padding: 0.45em 0.8em 0.55em 0.8em;
+    text-decoration: none;
 }
 
-div.logo {
+/* div.logo {
     padding: 1em;
     border-radius: 50%;
+    -webkit-text-stroke: 5px;
     background-color: #ffffffC0;
-    box-shadow: 0 0 10px #ffffffB0;
-}
+    box-shadow: 0 0 10px #ffffffB0; 
+}*/ 
 
 img.logo {
-    filter: drop-shadow(0px 0px 1px white) drop-shadow(0px 0px 3px white); 
+    filter: drop-shadow(0px 0px 1px #00000050) drop-shadow(0px 0px 3px #00000080) drop-shadow(0px 0px 8px #000000f0) drop-shadow(0px 0px 12px #000000f0); 
 }
 
 /* desktop/tablet styles */
@@ -114,7 +121,8 @@ nav label.spotlight {
 	font-style: normal;
 	font-size: 1.2em;
     font-weight: bold;
-	padding: 0.8em;
+    margin: 0px;
+	padding: 0.5em 0.8em ;
 }  
 
 nav input:checked ~ ul {
@@ -122,5 +130,7 @@ nav input:checked ~ ul {
 }
 
 .logo {
-    height: calc(1.2em + 0.8em + 0.8em);
+    height: 3em;
+    padding: 0px;
+    border: none;
 }

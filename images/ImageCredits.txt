@@ -1,8 +1,23 @@
-teaPour.mp4: Video by Anna Pou : https://www.pexels.com/video/a-person-pouring-a-hot-tea-in-a-mini-bowls-8298096/
-teaMug.mp4, teaMugMarble.mp4: Designed by Freepik
-teaDesktop.mp4: Video by <a href="https://pixabay.com/users/kimdaejeung-7703165/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=133318">dae jeung kim</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=133318">Pixabay</a>
-teaLilac.mp4: Video by <a href="https://pixabay.com/users/charity_donate-33501723/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=149938">mas khan</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=149938">Pixabay</a>
-teaFall.mp4
+teaLilac.mp4: 
+Video by mas khan from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=149938">Pixabay</a>
+
+
+teapotPlaceholder.jpg: Photo by Anna Pou : https://www.pexels.com/photo/clsoe-up-of-tea-in-glass-teapots-8329933/
+teapotCeranPlaceholder.jpg: Photo by AMAL MK :  https://unsplash.com/photos/a-white-tea-pot-sitting-on-top-of-a-table-IFPMKh8C02I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText      
+glassTeacupPlaceholder.jpg: Photo by Mareefe: https://www.pexels.com/photo/peppermint-tea-on-teacup-1417945/
+hammeredTeacupPlaceholder.jpg: Photo by Pixabay: https://www.pexels.com/photo/white-ceramic-cup-on-white-saucer-34780/
+teaStrainerPinch.jpg: Photo by Anna Pou : https://www.pexels.com/photo/tea-strainer-and-herbs-8329982/
+gaiwanPlaceholder.jpg: Photo by Ryu Orn on unsplash https://unsplash.com/photos/white-ceramic-cup-on-white-tissue-paper-uM3Wiejmvts?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
+      
 
 
 Other images my own.
+
+
+---
+not used (yet?)
+teaPour.mp4: Video by Anna Pou : https://www.pexels.com/video/a-person-pouring-a-hot-tea-in-a-mini-bowls-8298096/
+teaMug.mp4, teaMugMarble.mp4: Designed by Freepik
+teaDesktop.mp4: Video by <a href="https://pixabay.com/users/kimdaejeung-7703165/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=133318">dae jeung kim</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=133318">Pixabay</a>
+
+teaFall.mp4
