@@ -1,5 +1,6 @@
 :root {
     --spotlightColor: #62af38;
+    --spotlight-dark-Color: #284916;
     --background-primary-color: #000000;
     --background-secondary-color: #333;
     --background-secondary-dark-color: #222;
@@ -10,7 +11,7 @@
     --font-spotlight-shadow-offset-neg: -0.35em;
     --font-spotlight-shadow: #00000030;
     --overlay-color: #000000A0;
-    --hero-height: 90vh;
+    --hero-height: 100vh;
 }
 
 * {
@@ -22,6 +23,7 @@
 body, html {
     width: 100%;
     height: 100%;
+    color: var(--font-primary-color)
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,6 +39,7 @@ h2, h3 {
     margin-top: 2em;
 }
 
+/* HERO SECTION */
 div#hero {
     height: var(--hero-height);
     background-color: var(--overlay-color);
@@ -70,15 +73,16 @@ div#hero {
 	align-content: center;
 	justify-content: center;
 	text-align: center;
-	background-color: #ffffff50;
+/*	background-color: #ffffff50; */
 	border-radius: 8px;
 	padding: 2px;
 	box-shadow: var(--shadowBlured);
     padding: 2%;
 }
 
+/*ABOUT SECTION */
 #about {
-    background: linear-gradient(blue, black);
+    background: linear-gradient(var(--spotlight-dark-Color) 0%, var(--spotlightColor)25%, var(--spotlightColor)40%, var(--background-primary-color)100%);
     display: flex;
     align-items: center;
     padding: 2em;
@@ -92,6 +96,7 @@ div#hero {
     padding: 2em;
 }
 
+/*OTHER SECTIONS*/
 #custom {
     display: flex;
     flex-direction: column;
@@ -118,7 +123,14 @@ div#hero {
     border-radius: 8px;
     padding: 1.5em;
     margin: 1em;
-    background-color: var(--background-secondary-color);
+    background-color: var(--overlay-color);
+    text-align: justify;
+    text-justify: inter-character;
+    hyphens: auto;
+
+/*      text-justify: inter-word;
+    word-spacing: -0.5px; */
+    
 }
 
 .card img {
