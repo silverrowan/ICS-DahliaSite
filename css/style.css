@@ -31,6 +31,15 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.logoText {
+    font-family: Amaranth, serif;
+}
+
+.logo {
+    display: flexbox;
+    flex-direction: row;
+}
+
 h2, h3 {
     margin: 0em 1em 0.5em 1em;
     color: var(--font-secondary-color);
