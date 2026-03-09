@@ -1,0 +1,104 @@
+PROJECT INSTRUCTIONS & COMPLETION
+
+'STARTUP'
+#1,2,3,
+    COMPLETE
+
+#4 : Navbar
+    NAVBAR added
+    DROPDOWN logo position, styling NEED FIXING
+
+SECTION 1 & 2
+#6,7,8,9,10
+    COMPLETE
+
+SECTION 3
+#11,12,13
+    COMPLETE
+#14 : HOVER EFFECT
+   on image? with transition (NO FLASH effect)
+#15 : RESPONSIVE LAYOUT: 
+        desktop: 3x3, tablet: 2x2, iphone15: 1x1 (???? x#!?)
+
+SECTION 4
+#16
+    BACKGROUND COMPLETE
+    make EACH IMAGE (6) a link to larger version of self
+        WITH 'SUFFICIENT' padding and margin and centering techniques 
+            (NOT QUITE SURE WHAT MEANS HERE? the icons, or the link, or a page for each image?)
+#17 - DONE
+#18 : RESPONSIVE LAYOUT 
+        SAME AS #15
+
+SECTION 5
+#19 : 3 boxes (image, header, 2 paragraphs)
+    NEED STYLING
+#20 - DONE
+#21 : DESKTOP LAYOUT
+        Boxes side by side, contents column
+#22 : IPAD LAYOUT
+        Boxes stacked vertically
+        contents box 1 & 3: image to left, info to right(vertically)
+        contents box 2: flip: image to right, info to left
+#23 : IPHONE LAYOUT
+        Everything vertical
+
+SECTION 6 : FORM
+#24 : CONTENTS
+    Form with an icon? header, and email input w button.... images missing icon?
+    labels are also inside the boxes, but I thought was said that this was a don't do?
+#25 : POSITION
+    Centered
+#26 : BACKGROUND
+    Match page or video (CAN I use a picture instead?)
+#1 (???) 
+    HOVERS on buttons
+        MODERN STYLING
+        make it 'look good'
+            NOT BOXY
+            Mobile forms should be reasonable size
+#2 Appropriate whitspace around elements
+
+FINAL CHECKS
+
+Navigation:
+        - each navbar item should take to correct section
+        - make sure the top is NOT cut off in mobile & tablet mode
+    Style navbar
+    Style webpage (backgrounds, etc)
+
+Video
+        -repeat, covering entire viewing area
+        -header should be readable
+
+About
+        -1 small heeader, 2 paragraphs, image or gradient background
+Facts/Custom
+        -background color
+        -desktop layout: 3x2
+        -tablet layout: horiz 2x3
+        -iphone layout: 1x6
+        -Header & paragraph used, text clear & readable
+        -each box HOVERABLE
+Gallery
+        -full width background
+        -header (overall)
+        -6 images, clickable
+        -open a larger ver of the image in the gallery
+        -use sufficient padding and margin and centering techniques
+Pricing
+        -header(overall)
+        -3 boxes, ea w image, header, 2 paragraphs
+        -responsive layout: Quite variable, See details abv
+        -eeach box HOVERABLE
+        -Compare vs Images (??????????)
+Form
+        -heaader(overall)
+        -centered in page
+        -background styled to fit, or video
+        -3 imputs as in example photos
+        -button has HOVER
+Footer
+        copyright at bottom, and centered
+Modes
+        Light and Dark modes active and functioning
