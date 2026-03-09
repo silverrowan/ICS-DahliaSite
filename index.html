@@ -9,6 +9,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Amaranth:ital,wght@0,400;0,700;1,400;1,700&family=Palanquin:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/navBarStyle.css">
+<!--	<link rel="stylesheet" href="css/buttonBarStyle.css">-->
 	<link rel="stylesheet" href="css/fa/fontawesome.css">
 	<link rel="stylesheet" href="css/fa/brands.css">
 	<link rel="stylesheet" href="css/fa/regular.css">
@@ -42,15 +43,34 @@
 				Your browser does not support this video
 			</video>
 		</div>
-		<div class="heroContent">
+		<div class="heroContent titleBodyContainer">
 			<p>Exceptional Artisan Flavored Teas</p>
 			<h1>Indulge in Exquisite Tea Blends</h1>
 			<a href="#about" class="spotlight button">Discover More <i class="fa-solid fa-circle-down"></i></a>
 		</div>
 	</div>
+<!--ADDITIONAL FLOATING COMPONENTS-->
+<div class="floatContainer">
+	<div class="float">
+		<div>
+			<div class="spotlight button">
+				<i class="fa-solid fa-sun"></i>
+			</div>
+			<div class="spotlight button">
+				<i class="fa-solid fa-moon"></i>
+			</div>
+			<div class="spotlight button">
+				<i class="fa-solid fa-leaf turn80"></i>
+			</div>
+		</div>
+		<div>
+			<a href="#hero" title="Return to top" class="spotlight button"><i class="fa-solid fa-angle-up"></i></a>
+		</div>
+	</div>
+</div>
 <!--2: ABOUT SECTION-->
-	<div id="about">
-		<div class = "about card">
+	<div id="about" class="cardContainer">
+		<div class = "about card titleBodyContainer">
 			<h2>Who We Are</h2>
 			<hr>
 			<p>Welcome to Dahlia Tea Co, a small, passionate, tea business located in Victoria, BC. We’re all about tea, but more importantly, we’re all about being socially conscious, staying true to our sustainability and ethical values, and sharing the love for floral and flavored teas.</p>
@@ -62,18 +82,16 @@
 		</div>
 	</div>
 <!--3: OUR TEAS SECTION / "6 FACTS SECTION"-->
-	<div id="custom">
+	<div id="custom" class="titleBodyContainer">
 		<h2>Our Teas</h2>
 		<hr>
-		<div class="teaListContainer">
-			<div class ="border">
-				<div class="card">
-					<div class="innerShadow">
-						<img src="images/RoseVanilla.jpg" alt="Photograph of Rose Vanilla Cream tea leaves in teacup">
-					</div>
-					<h3>Rose Vanilla Cream</h3>
-					<p>Smooth Vanilla highlights, bright perfumy rose notes and a hint of creaminess.</p>
+		<div class="teaListContainer cardContainer">
+			<div class="card">
+				<div class="innerShadow">
+					<img src="images/RoseVanilla.jpg" alt="Photograph of Rose Vanilla Cream tea leaves in teacup">
 				</div>
+				<h3>Rose Vanilla Cream</h3>
+				<p>Smooth Vanilla highlights, bright perfumy rose notes and a hint of creaminess.</p>
 			</div>
 			<div class="card">
 				<div class="innerShadow">
@@ -125,57 +143,59 @@
 		</div>
 	</div>
 <!--4: GALLERY SECTION 6 images-->
-	<div id="images">
+	<div id="images" classs="titleBodyContainer">
 		<div class="card">
 			<h2>Tea Accessories</h2>
 			<hr>
-			<div>
-				<a href="images/teapotPlaceholder.jpg" target=_blank>
-					<img src="images/teapotPlaceholder.jpg" alt="Photo of two glass teapots with blooming tea">
-				</a>
-			</div>
-			<div>
-				<a href="images/teapotCeranPlaceholder.jpg" target=_blank>
-					<img src="images/teapotCeranPlaceholder.jpg" alt="Photo of white ceramic teapot">
-				</a>
-			</div>
-			<div>
-				<a href="images/glassTeacupPlaceholder.jpg" target=_blank>
-				<img src="images/glassTeacupPlaceholder.jpg" alt="Photo mint and a glass teacup filled with tea on a burlap coaster">
-				</a>
-			</div>
-			<div>
-				<a href="images/hammeredTeacupPlaceholder.jpg" target=_blank>
-				<img src="images/hammeredTeacupPlaceholder.jpg" alt="Photo of raspberries and a white ceramic teacup and saucer with 'hammered' texture, filled with herbal tea">
-				</a>
-			</div>
-			<div>
-				<a href="images/teaStrainerPinch.jpg" target=_blank>
-					<img src="images/teaStrainerPinch.jpg" alt="Photo of large tea strainer on marble with herbal teas">
-				</a>
-			</div>
-			<div>
-				<a href="images/gaiwanPlaceholder.jpg" target=_blank>
-					<img src="images/gaiwanPlaceholder.jpg" alt="Photo of off-white traditional Gaiwan with fabric mat and bamboo tray">
-				</a>
+			<div class="cardContainer">
+				<div>
+					<a href="images/teapotPlaceholder.jpg" target=_blank>
+						<img src="images/teapotPlaceholder.jpg" alt="Photo of two glass teapots with blooming tea">
+					</a>
+				</div>
+				<div>
+					<a href="images/teapotCeranPlaceholder.jpg" target=_blank>
+						<img src="images/teapotCeranPlaceholder.jpg" alt="Photo of white ceramic teapot">
+					</a>
+				</div>
+				<div>
+					<a href="images/glassTeacupPlaceholder.jpg" target=_blank>
+					<img src="images/glassTeacupPlaceholder.jpg" alt="Photo mint and a glass teacup filled with tea on a burlap coaster">
+					</a>
+				</div>
+				<div>
+					<a href="images/hammeredTeacupPlaceholder.jpg" target=_blank>
+					<img src="images/hammeredTeacupPlaceholder.jpg" alt="Photo of raspberries and a white ceramic teacup and saucer with 'hammered' texture, filled with herbal tea">
+					</a>
+				</div>
+				<div>
+					<a href="images/teaStrainerPinch.jpg" target=_blank>
+						<img src="images/teaStrainerPinch.jpg" alt="Photo of large tea strainer on marble with herbal teas">
+					</a>
+				</div>
+				<div>
+					<a href="images/gaiwanPlaceholder.jpg" target=_blank>
+						<img src="images/gaiwanPlaceholder.jpg" alt="Photo of off-white traditional Gaiwan with fabric mat and bamboo tray">
+					</a>
+				</div>
 			</div>
 		</div>
 	</div>
 <!--5: PRICING SECTION-->
-	<div id="pricing">
+	<div id="pricing" class="titleBodyContainer">
 		<div>
 			<h2>Not Sure Which Teas You Want?</h2>
 			<hr>
 			<p class="subtitle">Try our sample sets</p>
 			
 		</div>
-		<div>
+		<div class="cardContainer">
 			<div class="price card">
 				<img src="images/teaSet01.jpg" alt="top down photo of 5 cups of looseleaf tea leaves">
 				<h3>Black Teas</h3>
 				<p>Try a selection of our most popular Black Teas</p>
 				<p>includes: Rose Vanilla, Salamander Chai, Lavender Earl Grey, Chocolate Tempataion, Ice Wine</p>
-				<section class="button">$20</section>
+				<section class="spotlight button">$20</section>
 			</div>
 			<div class="price card">
 				<img src="images/teaSet02.jpg" alt="top down photo of 5 cups of looseleaf tea leaves">
@@ -194,7 +214,9 @@
 		</div>
 	</div>
 <!--6: CONTACT FORM-->
-	<div id="contact">
+	<div id="contact" class="titleBodyContainer">
+		<h2>Contact Us</h2>
+		<hr>
 		<form>
 			<label for="name">Name </label>
 			<input type="text" id="name" name="name" size="10"></input>
@@ -212,22 +234,6 @@
 		<h5>Copyright &#169; Dahlia Tea Co 2026</h5>
 	</div>
 
-<!--ADDITIONAL FLOATING COMPONENTS-->
-	<div class="float">
-		<div>
-			<div class="spotlight button">
-				<i class="fa-solid fa-sun"></i>
-			</div>
-			<div class="spotlight button">
-				<i class="fa-solid fa-moon"></i>
-			</div>
-			<div class="spotlight button">
-				<i class="fa-solid fa-leaf turn80"></i>
-			</div>
-		</div>
-		<div>
-			<a href="#hero" title="Return to top" class="spotlight button"><i class="fa-solid fa-angle-up"></i></a>
-		</div>
-	</div>
+
 </body>
 </html>
