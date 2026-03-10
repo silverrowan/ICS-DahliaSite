@@ -20,8 +20,16 @@
     --overlay-color: hsl(var(--overlay-hsl-color), 65%);
     --hero-height: 100vh;
     --standard-padding: 1em;
-    --standard-border-radius: 0.5em;
     --standard-transition: 1s;
+    --border-radius: 0.5em;
+    --border-width: 1px solid;
+    --border-spotlight: var(--border-width) var(--spotlightColor);
+    --border-lightfont: var(--border-width) var(--font-secondary-color);
+    --border-dark: var(--border-width) var(--background-primary-dark-color);
+    --border-image: none;
+
+
+
 /* MEDIA QUERY BREAKPOINTS */
     /* --phone-screen-width: 393px;
     --tabletv-screen-width: 768px;
@@ -41,6 +49,33 @@
     --overlay-hsl-color: 0, 0%, 100%;
     --overlay-color: hsl(var(--overlay-hsl-color), 40%);
     --font-form-color: var(--font-secondary-color);
+}
+
+:root:has(#fall-theme:checked) {
+    --background-primary-color: #fff8e8;
+    --background-primary-dark-color: #f7eed3;
+    --background-secondary-color: #e9bf9f;
+    --background-secondary-dark-color: #ff9b45;
+    --spotlightColor: #ee6b1f;
+    --spotlight-dark-Color: #6e230c;
+    --spotlight-bright-Color: #d5451b;
+    --spotlight-soft-color: #e2a16f;
+    --spotlight-dark-Color-alt: #674636;
+    --font-primary-color: #000;
+    --font-secondary-color: #521C0D;
+    --overlay-hsl-color: 0, 0%, 100%;
+    --overlay-color: hsl(var(--overlay-hsl-color), 40%);
+    --font-form-color: var(--font-secondary-color);
+    --shadow-hsl-color: 330, 29%, 20%;
+    --overlay-hsl-color:  22, 86%, 53%;
+    --font-spotlight-shadow: hsl(var(--shadow-hsl-color), 20%);
+    --overlay-color: hsl(var(--overlay-hsl-color), 40%);
+    --border-radius: 0;
+    --border-width: 5px solid;
+    --border-spotlight: var(--border-width) transparent;
+    --border-lightfont: var(--border-width) transparent;
+    --border-dark: var(--border-width) transparent;
+    --border-image: linear-gradient(45deg, #ca4c31, #fd9c3f, #feb24b, #e7632e, #571932) 1;
 }
 
 * {
@@ -97,7 +132,8 @@ p.subtitle {
 
 hr {
     width: 100%;
-    border: 1px solid var(--font-secondary-color);
+    border: var(--border-lightfont);
+    border-image: var(--border-image);
     mask-image: linear-gradient(to right, transparent, black, transparent);
     margin-bottom: 1em;
 }
@@ -107,17 +143,18 @@ hr {
     width: 100%;
 }
 /*basic card styling*/
-.card {
+.card, .textCard {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: var(--standard-border-radius);
+    border-radius: var(--border-radius);
     padding: var(--standard-padding);
     background-color: var(--overlay-color);
     hyphens: auto;
     position: relative;
-    border: 1px solid var(--background-primary-dark-color);
+    border: var(--border-dark);
+    border-image: var(--border-image);
     box-shadow: 0 0px 10px -3px var(--font-secondary-color);
     transition: box-shadow var(--standard-transition), border var(--standard-transition);
     gap: var(--standard-padding);
@@ -131,6 +168,16 @@ hr {
     60% {transform: translateY(-10%);}
     75% {transform: translateY(0%);}
     89% {transform: translateY(-5%);}
+    100% {transform: translateY(0%);}
+}
+
+@keyframes smBump {
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-10%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-5%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-2%);}
     100% {transform: translateY(0%);}
 }
 
@@ -179,9 +226,16 @@ div.innerShadow::after {
     gap: var(--standard-padding);
 }
 
+.priceContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
     /* --phone-screen-width: 393px;
     --tabletv-screen-width: 768px; */
-@media (min-width: 393px) {
+@media (min-width: 430px) { /*cell - tablet breakpoint */
     .card {
         width: 40%;
     }
@@ -192,10 +246,99 @@ div.innerShadow::after {
         justify-content: center;
         align-items: stretch;
     }
+
+    #images .cardContainer div { 
+        width: 40%;
+    }
+
+    #pricing .cardContainer {
+        flex-direction: column;
+        width: 90%;
+        justify-content: center;
+        align-items: center;
+        align-items: stretch;
+        min-width: 0;
+    }
+
+    .price.card {
+        flex-direction: row;
+        width: calc(100% - var(--standard-padding)*2);
+        align-items: center;
+        column-gap: var(--standard-padding);
+    }
+    .price.card.flip {
+        flex-direction: row-reverse;
+    }
+
+    .price.card .innerShadow {
+        max-width: 45%;
+        min-width: 0;
+    }
+
+    .priceContent {
+        min-width: 0;
+    }
+}
+
+@media (min-width: 850px) { /*tablet - desktop breakpoint */
+    .card {
+        width: 25%;
+    }
+
+    .cardContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        max-width: 1500px;
+    }
+
+    .about.textCard {
+        margin: var(--standard-padding);
+        max-width: 1000px;
+    }
+
+    #images .cardContainer div { 
+        width: 30%;
+    }
+
+    #pricing .cardContainer {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        align-items: stretch;
+        min-width: 0;
+        max-width: 1500px;
+    }
+
+    .price.card, .price.card.flip {
+        flex-direction: column;
+        width: 25%;
+        justify-content: flex-start;
+    }
+
+    .price.card .innerShadow {
+        max-width: none;
+        min-width: none;
+    }
+
+    .priceContent {
+        min-width: none;
+    }
+
+    #images .cardContainer.gallery {
+        padding: var(--standard-padding);
+        max-width: 1000px;
+    }
+
+    .formContainer {
+        max-width: 1000px;
+    }
 }
 
 .blurbContainer {
-    padding: var(--standard-padding);
+    padding: calc(var(--standard-padding)*2);
 }
 
 .titleBodyContainer {
@@ -205,7 +348,7 @@ div.innerShadow::after {
 /*SPOTLIGHT STYLES*/
 .button {
     border: 0px;
-    border-radius: var(--standard-border-radius);
+    border-radius: var(--border-radius);
     margin: 0px;
 	padding: 0.5em 0.8em;
     text-decoration: none;
@@ -245,6 +388,10 @@ div.innerShadow::after {
 
 @keyframes bgToRight {
     to {background-position: left;}
+}
+
+a img:hover {
+    animation: smBump 700ms ease-in;
 }
 
 /*SPECIFIC SECTIONS*/
@@ -296,6 +443,7 @@ div#hero {
 #about {
     background: linear-gradient(var(--background-primary-color)0%, var(--spotlight-dark-Color) 20%, var(--spotlightColor)45%, var(--spotlightColor)60%, var(--background-primary-color)100%);
     background-attachment: fixed;
+
 }
 
 .about {
@@ -307,12 +455,15 @@ div#hero {
     background-color: var(--background-primary-color);
 }
 
-.item:hover {
-    border: 1px solid var(--spotlightColor);
+.item:hover, .price.card:hover, a img:hover {
+    border: var(--border-spotlight);
+    border-image: var(--border-image);
     box-shadow: 0 0px 20px 0px var(--spotlightColor);
     /* transition: transform var(--standard-transition);
     transform: scale(1.05, 1.05); */
 }
+
+
 
 #custom h2 {
     font-size: 2.2em;
@@ -329,7 +480,7 @@ div#hero {
     background-color: var(--background-primary-color);
 }
 
-.price .button {
+.priceContent .button {
     width: 50%;
     text-align: center;
     padding: 0.2em 0.8em;
@@ -340,25 +491,40 @@ div#hero {
 /*CONTACT SECTION*/
 #contact {
     background-color: var(--background-secondary-color);
+    box-sizing: border-box;
 }
 
 form {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    gap: calc(var(--standard-padding)/2);
+    gap: calc(var(--standard-padding));
     width: 100%;
+    padding: var(--standard-padding);
+}
+
+.formContainer {
+    box-sizing: border-box;
+    padding: calc(var(--standard-padding)*2);
+    width: 100%
 }
 
 input, textarea {
-    border: 1px solid var(--spotlightColor);
-    border-radius: var(--standard-border-radius);
+    border: var(--border-spotlight);
+    border-image: var(--border-image);
+    border-radius: var(--border-radius);
     background-color: color-mix(in hsl, var(--spotlight-soft-color), #fff);
     padding: calc(var(--standard-padding)/4) calc(var(--standard-padding)/2);
 }
+
 input::placeholder, textarea::placeholder {
     color: var(--font-form-color);
     font-weight: bold;
     font-size: 1.2em;
+}
+
+textarea {
+    height: 8.4em;
 }
 
 /*BUTTON BAR */
@@ -370,6 +536,7 @@ input::placeholder, textarea::placeholder {
 .foot {
     padding: var(--standard-padding);
     background-color: color-mix(in srgb, var(--spotlight-dark-Color) 35%, var(--background-primary-dark-color));
+    width: calc(100%-2*var(--standard-padding));
 }
 
 /*DIVDERS*/
@@ -389,8 +556,10 @@ input::placeholder, textarea::placeholder {
 
 .noBg {
     background-color: #00000000;
-    margin: calc(var(--standard-padding)*-1);
-    width: calc(var(--standard-padding)*2 + 100%);
+    margin: calc(var(--standard-padding)*2*-1);
+    width: calc(var(--standard-padding)*4 + 100%);
+    transform: translateY(1px);
+    margin-top: var(--standard-padding);
 }
 
 path {
