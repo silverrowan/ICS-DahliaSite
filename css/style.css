@@ -63,11 +63,10 @@
     --spotlight-dark-Color-alt: #674636;
     --font-primary-color: #000;
     --font-secondary-color: #521C0D;
-    --overlay-hsl-color: 0, 0%, 100%;
-    --overlay-color: hsl(var(--overlay-hsl-color), 40%);
     --font-form-color: var(--font-secondary-color);
     --shadow-hsl-color: 330, 29%, 20%;
-    --overlay-hsl-color:  22, 86%, 53%;
+    --overlay-hsl-color: 79, 16%, 65%; /*sage*/
+    /* --overlay-hsl-color:  22, 86%, 53%; - orange*/
     --font-spotlight-shadow: hsl(var(--shadow-hsl-color), 20%);
     --overlay-color: hsl(var(--overlay-hsl-color), 40%);
     --border-radius: 0;
