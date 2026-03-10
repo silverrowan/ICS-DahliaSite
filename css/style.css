@@ -1,16 +1,19 @@
 :root {
     --spotlightColor: #61ae37;
     --spotlight-dark-Color: #284916;
+    --spotlight-bright-Color: #7aec3d;
+    --spotlight-soft-color: hsl(99, 20%, 73%);
     --background-primary-color-hsl: 0, 0%, 20%;
     --background-primary-color: hsl(var(--background-primary-color-hsl), 100%);
     --background-primary-dark-color: #222;
     --background-secondary-color: #000;
     --background-secondary-dark-color: #000;
     --font-primary-color: #fff;
-    --font-secondary-color: hsl(99, 20%, 73%);
+    --font-secondary-color: var(--spotlight-soft-color);
     --font-spotlight-color: #fff;
     --font-spotlight-shadow-offset: 0.35em;
     --font-spotlight-shadow-offset-neg: -0.35em;
+    --font-form-color: var(--spotlight-dark-Color);
     --shadow-hsl-color: 0, 0%, 0%;
     --overlay-hsl-color: 0, 0%, 0%;
     --font-spotlight-shadow: hsl(var(--shadow-hsl-color), 20%);
@@ -18,8 +21,13 @@
     --hero-height: 100vh;
     --standard-padding: 1em;
     --standard-border-radius: 0.5em;
-    --standard-transition: 1s
+    --standard-transition: 1s;
+/* MEDIA QUERY BREAKPOINTS */
+    /* --phone-screen-width: 393px;
+    --tabletv-screen-width: 768px;
+    --xwide-screen-width: ; */
 }
+
 /*ALT THEMES*/
 :root:has(#light-theme:checked) {
     --background-primary-color: hsl(99, 20%, 73%);
@@ -29,9 +37,10 @@
     --spotlight-dark-Color: #8ce75b;
     --spotlight-dark-Color-alt: #7aec3d;
     --font-primary-color: #000;
-    --font-secondary-color: hsl(99, 20%, 73%);
+    --font-secondary-color: #284916;
     --overlay-hsl-color: 0, 0%, 100%;
     --overlay-color: hsl(var(--overlay-hsl-color), 40%);
+    --font-form-color: var(--font-secondary-color);
 }
 
 * {
@@ -51,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.logoText {
+.logoText, .runIn {
     font-family: Amaranth, serif;
 }
 
@@ -61,10 +70,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h2, h3 {
-    margin: 0em 1em 0.5em 1em;
+    margin: 0em 1em;
     color: var(--font-secondary-color);
 }
-
 
 h2 {
     font-size: 1.8em;
@@ -72,6 +80,7 @@ h2 {
 
 h3 {
     font-size: 1.3em;
+    margin-top: calc(var(--standard-padding)/2);
 }
 
 p {
@@ -82,12 +91,15 @@ p.subtitle {
     color: var(--font-secondary-color);
     text-transform: capitalize;
     text-align: center;
+    margin-top: calc(var(--standard-padding)*-1);
+    margin-bottom: var(--standard-padding);
 }
 
 hr {
     width: 100%;
     border: 1px solid var(--font-secondary-color);
     mask-image: linear-gradient(to right, transparent, black, transparent);
+    margin-bottom: 1em;
 }
 
 .foot {
@@ -105,9 +117,21 @@ hr {
     background-color: var(--overlay-color);
     hyphens: auto;
     position: relative;
-    border: 1px solid var(--font-secondary-color);
+    border: 1px solid var(--background-primary-dark-color);
     box-shadow: 0 0px 10px -3px var(--font-secondary-color);
-    transition: background-color var(--standard-transition), box-shadow var(--standard-transition);
+    transition: box-shadow var(--standard-transition), border var(--standard-transition);
+    gap: var(--standard-padding);
+}
+
+
+@keyframes bump {
+    0% {transform: translateY(0%);}
+    20% {transform: translateY(-20%);}
+    40% {transform: translateY(0%);}
+    60% {transform: translateY(-10%);}
+    75% {transform: translateY(0%);}
+    89% {transform: translateY(-5%);}
+    100% {transform: translateY(0%);}
 }
 
 .card img, .titleBodyContainer img {
@@ -125,11 +149,6 @@ hr {
     border-radius: 50%;
     display: block;
 }
-
-/* #images img {
-    width: calc(100% - 2*var(--standard-padding));
-    margin: calc(var(--standard-padding));
-} */
 
 .innerShadow {
     position: relative;
@@ -150,7 +169,7 @@ div.innerShadow::after {
     z-index: 2;
 }
 
-.cardContainer, .titleBodyContainer {
+.cardContainer, .titleBodyContainer, .blurbContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -158,6 +177,25 @@ div.innerShadow::after {
 
 .cardContainer {
     gap: var(--standard-padding);
+}
+
+    /* --phone-screen-width: 393px;
+    --tabletv-screen-width: 768px; */
+@media (min-width: 393px) {
+    .card {
+        width: 40%;
+    }
+
+    .cardContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+    }
+}
+
+.blurbContainer {
+    padding: var(--standard-padding);
 }
 
 .titleBodyContainer {
@@ -169,7 +207,7 @@ div.innerShadow::after {
     border: 0px;
     border-radius: var(--standard-border-radius);
     margin: 0px;
-	padding: 0.45em 0.8em 0.55em 0.8em;
+	padding: 0.5em 0.8em;
     text-decoration: none;
     background: var(--background-primary-dark-color);
     color: var(--font-primary-color);
@@ -182,16 +220,31 @@ div.innerShadow::after {
 	font-size: 1.2em;
 }
 
+.button:hover {
+    animation: bump 700ms ease-in;
+}
+
 .spotlight {
     background: var(--spotlightColor);
     color: var(--font-spotlight-color);
     font-weight: bold;
     text-transform: capitalize;
 	font-style: normal;
+    background-image: linear-gradient(-45deg, var(--spotlightColor) 40%, var(--spotlight-bright-Color), var(--spotlightColor) 60%);
+    background-size: 500% 500%;
+    background-position: right;
 }
 
 .spotlight:hover {
-    background-image: linear-gradient(-45deg, var(--spotlight-dark-Color), var(--spotlightColor), var(--spotlight-dark-Color));
+    animation: bgToRight 3s infinite;
+}
+
+.spotlight.button:hover {
+    animation: bump 700ms ease-in, bgToRight 3s infinite;
+}
+
+@keyframes bgToRight {
+    to {background-position: left;}
 }
 
 /*SPECIFIC SECTIONS*/
@@ -243,7 +296,6 @@ div#hero {
 #about {
     background: linear-gradient(var(--background-primary-color)0%, var(--spotlight-dark-Color) 20%, var(--spotlightColor)45%, var(--spotlightColor)60%, var(--background-primary-color)100%);
     background-attachment: fixed;
-    padding: 0;
 }
 
 .about {
@@ -255,12 +307,12 @@ div#hero {
     background-color: var(--background-primary-color);
 }
 
- .item:hover {
+.item:hover {
     border: 1px solid var(--spotlightColor);
-    background-color: color-mix(in srgb, var(--background-secondary-color) 65%, var(--spotlight-dark-Color) 35%);
-    box-shadow: 0 0px 15px 0px var(--spotlightColor);
+    box-shadow: 0 0px 20px 0px var(--spotlightColor);
+    /* transition: transform var(--standard-transition);
+    transform: scale(1.05, 1.05); */
 }
-
 
 #custom h2 {
     font-size: 2.2em;
@@ -277,22 +329,74 @@ div#hero {
     background-color: var(--background-primary-color);
 }
 
+.price .button {
+    width: 50%;
+    text-align: center;
+    padding: 0.2em 0.8em;
+    mask-image: linear-gradient(to right, transparent, black, transparent);
+    margin-top: calc(var(--standard-padding)/2);
+}
+
 /*CONTACT SECTION*/
 #contact {
     background-color: var(--background-secondary-color);
 }
 
-/*BUTTON BAR */
-.float {
+form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: calc(var(--standard-padding)/2);
+    width: 100%;
 }
 
+input, textarea {
+    border: 1px solid var(--spotlightColor);
+    border-radius: var(--standard-border-radius);
+    background-color: color-mix(in hsl, var(--spotlight-soft-color), #fff);
+    padding: calc(var(--standard-padding)/4) calc(var(--standard-padding)/2);
+}
+input::placeholder, textarea::placeholder {
+    color: var(--font-form-color);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/*BUTTON BAR */
 .turn80 {
     transform: rotate(80deg);
 }
 
-/*???*/
-.priceCard {
-    width: 25%;
+/*FOOTER*/
+.foot {
+    padding: var(--standard-padding);
+    background-color: color-mix(in srgb, var(--spotlight-dark-Color) 35%, var(--background-primary-dark-color));
+}
+
+/*DIVDERS*/
+.divider {
+    display: block;
+    background-color: var(--background-primary-color);
+    height: 10vh;
+    width: 100%;
+    overflow: hidden;
+    margin: -1px 0;
+}
+
+.divider svg {
+    width: 100%;
+    height: 10vh;
+}
+
+.noBg {
+    background-color: #00000000;
+    margin: calc(var(--standard-padding)*-1);
+    width: calc(var(--standard-padding)*2 + 100%);
+}
+
+path {
+    fill: var(--background-secondary-color);
+}
+
+.noBg path {
+    fill: var(--background-primary-color);
 }
